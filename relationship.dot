@@ -1,0 +1,23 @@
+digraph relationship {
+  graph [
+    charset = "UTF-8";
+  ];
+
+
+  rest_api [label="REST API Server", shape = box];
+
+  discord_bot [label="Discord Bot"];
+
+  slack_bot [label="Slack Bot"];
+
+  web_app [label="Web Application"];
+
+  rest_api -> discord_bot [arrowhead = normal];
+  discord_bot -> rest_api [label = "POST or GET", arrowhead = normal];
+
+  rest_api -> slack_bot [arrowhead = normal];
+  slack_bot -> rest_api [label = "POST or GET", arrowhead = normal];
+
+  rest_api -> web_app [arrowhead = normal];
+  web_app -> rest_api [label = "POST or GET", arrowhead = normal];
+}
